@@ -14,7 +14,7 @@ pipeline{
         }
         stage('build'){
             steps{
-		printenv
+	
                 echo 'Building docker image'
                 sh 'docker build -t $IMG_NAME .'
             }
