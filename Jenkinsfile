@@ -19,6 +19,12 @@ pipeline{
                 sh 'docker build -t $IMG_NAME .'
             }
         }
+	stage('docker run'){
+            steps{
+                echo 'running docker container'
+                sh 'docker run -d -p 8000:5000 $IMG_NAME'
+            }
+        }
         
     }
 }
